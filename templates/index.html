@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexical Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Lexical Analyzer</h1>
+        <p>Automated Lexical Analyzer for C Programming</p>
+
+        <h3>Enter Your C Code:</h3>
+
+        <textarea id="codeInput" placeholder="Write or paste your C code here...">int main() {
+    int a = 10;
+    return 0;
+}</textarea>
+
+        <div class="buttons">
+            <button onclick="analyzeCode()">Analyze Code</button>
+            <button onclick="clearCode()" class="clear">Clear</button>
+        </div>
+
+        <h2>Analysis Results</h2>
+
+        <div class="stats">
+            <div>Total Tokens: <span id="totalTokens">0</span></div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Token Type</th>
+                    <th>Lexeme</th>
+                </tr>
+            </thead>
+            <tbody id="resultBody">
+                <tr>
+                    <td colspan="2">No analysis performed yet.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
